@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <script src="utilitarios.js"></script> -->
+    <script src="notas.js"></script>
+ 
+    <script src="../../utilitarios.js" ></script>
+
+
+</head>
+<body onload="mostraTabla()">
+
+    <div class="contenido">
+        <div class="titulo">
+            
+        </div>
+        <div class="ingresoDatos">
+            <div class="tituloCampo">
+                NOMBRE
+            </div>
+            <div>
+                <input type="text" id="txtNombre" />
+                <div class="error" id="lblError1"></div>
+
+            </div>
+
+        </div>
+        <div class="ingresoDatos">
+            <div class="tituloCampo">
+                APELLIDO
+            </div>
+            <div>
+                <input type="text" id="txtApellido" />
+                <div class="error" id="lblError2"></div>
+
+
+            </div>
+
+        </div>
+        <div class="ingresoDatos">
+            <div class="tituloCampo">
+                NOTA1
+            </div>
+            <div>
+                <input type="text" id="txtNota1" />
+                <div class="error" id="lblError3"></div>
+
+
+            </div>
+
+        </div>
+
+        <div class="ingresoDatos">
+            <div class="tituloCampo">
+                NOTA2
+            </div>
+            <div>
+                <input type="text" id="txtNota2" />
+                <div class="error" id="lblError3"></div>
+
+
+            </div>
+
+        </div>
+        <div class="ingresoDatos">
+            <div class="tituloCampo">
+                NOTA3
+            </div>
+            <div>
+                <input type="text" id="txtNota3" />
+                <div class="error" id="lblError3"></div>
+
+
+            </div>
+
+        </div>
+
+        
+        <!-- <h3>Ingrese el porcentaje de descuento</h3>
+        <input type="text" id="txtPorcentajeDescuento"/> -->
+
+        <div class="botones">
+            <div class="contenedorBoton">
+                <input type="button" value="CALCULAR "  onclick="calcular()"  />
+                <input type="button"  id="btnGuadar" value="GUARDAR" onclick="guardar()" />
+
+            </div>
+
+        
+
+        </div>
+
+        <div class="resultado">
+            <div>
+                TOTAL
+
+            </div>
+            <div id="lbltotal">
+                0.0
+
+            </div>
+
+            <div>
+                Promedio
+
+            </div>
+            <div id="lblpromedio">
+                0.0
+
+            </div>
+            
+        
+
+        </div>
+
+    </div>
+
+
+    <div id="tablaResumen" >
+
+    </div>
+
+
+    
+</body>
+</html>
