@@ -50,114 +50,121 @@ calcular= function(){
 }
 
 
-guardar= function(){
-    let  nota1, nota2, nota3, calcular, promedio, nombre, apellido
+guardar = function () {
+  let nota1, nota2, nota3, calcular, promedio, nombre, apellido;
 
-    nombre= recuperarTexto("txtNombre");
-    apellido= recuperarTexto("txtApellido");
-    nota1= recuperarFloat("txtNota1");
-    nota2= recuperarFloat("txtNota2");
-    nota3= recuperarFloat("txtNota3");
+  nombre = recuperarTexto("txtNombre");
+  apellido = recuperarTexto("txtApellido");
+  nota1 = recuperarFloat("txtNota1");
+  nota2 = recuperarFloat("txtNota2");
+  nota3 = recuperarFloat("txtNota3");
 
-    promedio=calcularPromedio(nota1,nota2, nota3);
-    calcular= calculartTotal(nota1, nota2, nota3);
+  promedio = calcularPromedio(nota1, nota2, nota3);
+  calcular = calculartTotal(nota1, nota2, nota3);
 
-    if(validarNombre("lblError1",nombre)){
-        
-        let estudiante= [];
+  if (valiadarNombre("lblError1", nombre)) {
+    let estudiante = [];
 
-        estudiante.nombre= nombre;
-        estudiante.apellido= apellido;
-        estudiante.nota1= nota1;
-        estudiante.nota2= nota2;
-        estudiante.nota3= nota3;
-        estudiante.total= calcular;
-        estudiante.promedio= promedio;
+    estudiante.nombre = nombre;
+    estudiante.apellido = apellido;
+    estudiante.nota1 = nota1;
+    estudiante.nota2 = nota2;
+    estudiante.nota3 = nota3;
+    estudiante.total = calcular;
+    estudiante.promedio = promedio;
 
-        estudiantes.push(estudiante)
+    estudiantes.push(estudiante);
 
-        alert("guardado correctamente")
+    alert("guardado correctamente");
 
-        mostraTabla();
+    mostraTabla();
     // deshabilitarComponente("btnGuadar");
-
-    }
-
-
-
-    
- 
-    
-}
-
-
+  }
+};
 
 mostraTabla = function () {
+  let cmpTable, contenidoTabla, element;
 
-    let cmpTable, contenidoTabla, element
+  // mostrarComponente("divResumen");
 
-    // mostrarComponente("divResumen");
+  cmpTable = document.getElementById("tablaResumen");
 
-    cmpTable = document.getElementById("tablaResumen")
+  contenidoTabla =
+    "<table><tr>" +
+    "<th>NOMBRE</th>" +
+    "<th>APELLIDO</th>" +
+    "<th>NOTA1</th>" +
+    "<th>NOTA2</th>" +
+    "<th>NOTA3</th>" +
+    "<th>TOTAL</th>" +
+    "<th>PROMEDIO</th>" +
+    "</tr>";
 
-    contenidoTabla = "<table><tr>" +
-        "<th>NOMBRE</th>" +
-        "<th>APELLIDO</th>" +
-        "<th>NOTA1</th>" +
-        "<th>NOTA2</th>" +
-        "<th>NOTA3</th>" +
-        "<th>TOTAL</th>" +
-        "<th>PROMEDIO</th>" +
+  for (let i = 0; i < estudiantes.length; i++) {
+    element = estudiantes[i];
+    contenidoTabla +=
+      "<tr>" +
+      "<td>" +
+      element.nombre +
+      "</td>" +
+      "<td>" +
+      element.apellido +
+      "</td>" +
+      "<td>" +
+      element.nota1 +
+      "</td>" +
+      "<td>" +
+      element.nota2 +
+      "</td>" +
+      "<td>" +
+      element.nota3 +
+      "</td>" +
+      "<td>" +
+      element.total +
+      "</td>" +
+      "<td>" +
+      element.promedio +
+      "</td>" +
+      "</tr>";
 
-        "</tr>"
+    contenidoTabla += "</table>";
 
-    for (let i = 0; i < estudiantes.length; i++) {
-        element = estudiantes[i];
-        contenidoTabla +=
-        "<tr>"+
-        "<td>"+element.nombre +"</td>" +
-        "<td>"+element.apellido +"</td>" +
-        "<td>"+element.nota1 +"</td>" +
-        "<td>"+element.nota2 +"</td>" +
-        "<td>"+element.nota3 +"</td>" +
-        "<td>"+element.total +"</td>" +
-        "<td>"+element.promedio +"</td>" +
+    cmpTable.innerHTML = contenidoTabla;
+  }
+};
 
-        "</tr>"
+valiadarNombre = function (componente, campo) {
+  if (campo == "") {
+    mostrarTexto(componente, "*CAMPO OBLIGATORIO");
+    return false;
+  }
 
+  if (campo.length >= 3) {
+    for (let i = 0; i < campo.length; i++) {
+      let element = campo[i];
 
-        contenidoTabla += "</table>"
+      if (!esMayuscula(element)) {
+        mostrarTexto(componente, "Solo pueden contener letras mayusculas.");
 
-        cmpTable.innerHTML= contenidoTabla;
-
-        
+        return false;
+      }
     }
+  } else {
+    mostrarTexto(componente, "Deben tener al menos 3 caracteres.");
+    return false;
+  }
+  mostrarTexto(componente, "");
 
+  return true;
+};
 
-}
+esMayuscula = function (caracter) {
+  let code = caracter.charCodeAt();
 
-
-validarNombre = function (nombre, idComponenteError) {
-
-    let error = false;
-
-    if (nombre == "") {
-
-        mostrarTexto(idComponenteError, "campo obligatorio ")
-
-        error = true;
-
-    }
-
-    if (nombre != nombre.toUpperCase()) {
-        mostrarTexto("lblError1", "Ingrese MAYUSCULAS ")
-        error = true;
-
-
-   
-    }
-
-    return !error;
-
-
-}
+  // Rango de códigos ASCII correspondiente a las letras mayúsculas A-Z
+  if (code >= 65 && code <= 90) {
+    return true;
+  } else {
+    return false;
+  }
+};
