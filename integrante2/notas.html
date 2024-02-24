@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="notas.css" />
+
+    <script src="notas.js"></script>
+    <script src="../utilitarios.js"></script>
+    <!-- <script src="serviciosPromediosNotas.js"></script>    -->
+</head>
+
+<body onload="mostrarEstudiantes()">
+
+    <div class="imagenResultado">
+        <img src="./imagenes/logoKrakeDev.png" width="10%" />
+    </div>
+    <div class="principal">
+
+        <div class="contenido">
+            <div class="titulo">
+                Primer Campus
+            </div>
+            <div class="ingresoDatos">
+                <div class="tituloCampo">
+                    Nombre
+                </div>
+                <div>
+                    <input type="text" class="cajaTexto" id="txtNombre" />
+                    <div class="error" id="lblError1"></div>
+                </div>
+
+            </div>
+            <div class="ingresoDatos">
+                <div class="tituloCampo">
+                    Apellido
+                </div>
+                <div>
+                    <input type="text" class="cajaTexto" id="txtApellido" />
+                    <div class="error" id="lblError2"></div>
+                </div>
+
+            </div>
+            <div class="ingresoDatos">
+                <div class="tituloCampo">
+                    NOTA 1
+                </div>
+                <div>
+                    <input type="text" class="cajaTexto" id="txtNota1" />
+                    <div class="error" id="lblError3"></div>
+                </div>
+
+            </div>
+            <div class="ingresoDatos">
+                <div class="tituloCampo">
+                    NOTA 2
+                </div>
+                <div>
+                    <input type="text" class="cajaTexto" id="txtNota2" />
+                    <div class="error" id="lblError4"></div>
+                </div>
+
+            </div>
+            <div class="ingresoDatos">
+                <div class="tituloCampo">
+                    NOTA 3
+                </div>
+                <div>
+                    <input type="text" class="cajaTexto" id="txtNota3" />
+                    <div class="error" id="lblError5"></div>
+                </div>
+
+            </div>
+            <div class="botones">
+                <div class="contenedorBoton">
+                    <input type="button" value="CALCULAR" class="estiloBoton" onclick="calcular();" />
+                </div>
+                <div class="contenedorBoton">
+                    <input type="button" value="GUARDAR" id="btnGuardar" class="estiloBoton" onclick="guardar();" />
+                </div>
+            </div>
+
+        </div>
+        <div class="areaResultado">
+            <div class="resultado">
+                <div>
+                    Total:
+                </div>
+                <div id="lblResultadoTotal">
+                    0.0
+                </div>
+            </div>
+            <div class="resultado">
+                <div>
+                    PROMEDIO:
+                </div>
+                <div id="lblResultadoPromedio">
+                    0.0
+                </div>
+            </div>
+
+
+
+            <div id="tablaEstudiantes" class="areaTabla">
+
+            </div>
+            <div class="tituloCampo">
+                Joao Rodriguez
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

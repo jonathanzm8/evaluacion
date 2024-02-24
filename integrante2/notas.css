@@ -1,0 +1,200 @@
+body{
+    background-color:aliceblue;
+      background-size: cover;
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+  
+  .principal{
+      display: flex;
+      background-color:rgb(106, 178, 233);
+      margin-left: 0px;
+      margin-right:0px;
+      flex-direction: row;
+      margin-top: 100px;
+  
+  }
+  .titulo{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 20px;
+      font-size: 30px;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+  .logoEscuela{
+      display: flex;
+      flex:1;
+      justify-content: center;
+      align-items: center;
+      
+  }
+  .areaResultado{
+      display: flex;
+      flex:1;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  .imagen{
+      display: flex;
+      flex:1;
+      justify-content: center;
+      align-items: center;
+    
+  }
+  .estiloBoton{
+      background-color: #4CAF50; 
+      border: none;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 16px;
+      border-radius: 5px;
+  
+  }
+  .estiloBoton:hover {
+      background-color:white; 
+      color: #4CAF50;
+      border:1px;
+      border-color: #4CAF50;
+      border-radius: 5px;
+  }
+  .estiloBoton:active{
+      background-color: #4CAF50; 
+      border: none;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 16px;
+      border-radius: 5px;
+  
+  }
+  .botones{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 20px;
+  }
+  .contenedorBoton{
+      display: flex;
+      flex:1;
+      justify-content: center;
+  }
+  .cajaTexto{
+      border-radius: 4px;
+      border-color: #4CAF50;
+      
+      font-size: 20px;
+      color:rgb(85, 83, 83);
+  }
+  .ingresoDatos{
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+  .tituloCampo{
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      margin-right: 20px;
+  }
+  .resultado{
+      display: flex;
+      flex:1;
+      flex-direction: row;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-top: 30px;
+  
+  }
+  .imagenResultado{
+      display: flex;
+      flex:6;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+  }
+  .error{
+      color:red;
+      font-style: italic;
+      font-size: 16px;
+  }
+
+  .miTabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.miTabla th, .miTabla td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.miTabla th {
+    background-color: #651313;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #4140a4;
+    color: white;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #6a51cf;
+    color: white;
+  }
+  
+  table {
+    background-color: #0b0c0c;
+    width: 100%;
+  }
+  td{
+    text-align: center;
+  }
+
+  .areaTabla{
+    margin-top: 20px;
+  }
+  
+  .estiloBoton:hover {
+    background-color:white; 
+    color: #217023;
+    border: 1px solid;
+    border-color: #217023;
+    border-radius: 5px;
+}
+.estiloBoton:active{
+    background-color: #217023; 
+    border: 1px solid;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 5px;
+
+}
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+.estiloBoton:disabled {
+    background-color:gray; 
+    color: #232623;
+    border: 1px solid;
+    border-color: #232623;
+    border-radius: 5px;
+}
+.contenedorBoton{
+    display: flex;
+    flex:1;
+    justify-content: center;
+}
