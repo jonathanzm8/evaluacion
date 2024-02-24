@@ -62,24 +62,29 @@ guardar= function(){
     promedio=calcularPromedio(nota1,nota2, nota3);
     calcular= calculartTotal(nota1, nota2, nota3);
 
+    if(validarNombre("lblError1",nombre)){
+        
+        let estudiante= [];
 
+        estudiante.nombre= nombre;
+        estudiante.apellido= apellido;
+        estudiante.nota1= nota1;
+        estudiante.nota2= nota2;
+        estudiante.nota3= nota3;
+        estudiante.total= calcular;
+        estudiante.promedio= promedio;
 
-    let estudiante= [];
+        estudiantes.push(estudiante)
 
-    estudiante.nombre= nombre;
-    estudiante.apellido= apellido;
-    estudiante.nota1= nota1;
-    estudiante.nota2= nota2;
-    estudiante.nota3= nota3;
-    estudiante.total= calcular;
-    estudiante.promedio= promedio;
+        alert("guardado correctamente")
 
-    estudiantes.push(estudiante)
-
-    alert("guardado correctamente")
-
-    mostraTabla();
+        mostraTabla();
     // deshabilitarComponente("btnGuadar");
+
+    }
+
+
+
     
  
     
@@ -131,3 +136,28 @@ mostraTabla = function () {
 
 }
 
+
+validarNombre = function (nombre, idComponenteError) {
+
+    let error = false;
+
+    if (nombre == "") {
+
+        mostrarTexto(idComponenteError, "campo obligatorio ")
+
+        error = true;
+
+    }
+
+    if (nombre != nombre.toUpperCase()) {
+        mostrarTexto("lblError1", "Ingrese MAYUSCULAS ")
+        error = true;
+
+
+   
+    }
+
+    return !error;
+
+
+}
